@@ -1,0 +1,24 @@
+
+1) What happens when you initialize a repository? Why do you need to do it?
+
+   After calling 'git init' when logged into a directory, 'git' initializes
+   a directory tree to host metadata about the repository: inspecting this
+   directory hierarchy using 'ls -alR $dir/.git' (where '$dir' stands for the
+   directory on which a repository has been initialized) shows, for example,
+   a file named '$dir/.git/info/exclude', which suggests to exclude object
+   files (.o) or assembly files (.a) from synchronizing at commit requests.
+
+2) How is the staging area different from the working directory and the
+   repository? What value do you think it offers?
+
+   I will use W to refer to the working directory, S for the staging area, and
+   R for the repository.
+   As long as I understand, S acts as a buffer for 'git': it stores temporary
+   information about changes that I want to be logged by a commit.
+   In W, I actually WORK on files, modify them and explore programming options.
+   In R, I "carve into stone" modifications I actually decided to apply to
+   elements in W.
+   The real value of S is that it allows me to select which changes to remember
+   and which ones to discard.
+
+

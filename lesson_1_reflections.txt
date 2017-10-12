@@ -1,0 +1,89 @@
+
+1) How did viewing a diff between two versions of a file help you see the bug
+   that was introduced?
+
+   Since the older version worked, if there were no differences between the two
+   files, the executable obtained from the new one should work as well.
+   Thus, 'diff' is a blessing since it pinpoints the locations where the files
+   differ, and thus the source of the errors.
+
+2) How could having easy access to the entire history of a file make you a more
+   efficient programmer in the long term?
+
+   Let [file_1, file_2, ... file_T] be the (ordered) sequence of my file's
+   versions.
+   Suppose that I realize that all the modifications since version 'file_i+1',
+   1 <= i < T have led to a major 'strategic' error in my program. 
+   If I decided to revert back to version 'file_i', then since I have access to
+   the entire history I could simply take that as a 'root version' and start
+   modifying my project from there.
+   If I just had access to the last two versions ('file_T-1' and 'file_T'), I
+   could simply revert my last changes, but it wouldn't be easy to correct
+   major errors.
+
+3) What do you think are the pros and cons of manually choosing when to create
+   a commit, like you do in Git, vs. having versions automatically saved, like
+   Google Docs does?
+
+   Manual processes can convey more meaning since they are more conscious of
+   the context in which a change was conceived, but suffer from arbitrary human
+   choices.
+   Automatic processes take control from humans, but are also more reliable.
+   Pros: as a project developer, I can guide every collaborator through the
+         mental plan I had when writing the code just by carefully selecting
+         and documenting (using Git's commit messages) each "logical
+         checkpoint".
+   Cons: indentifying the "logical checkpoints" during the development of a
+         program is quite arbitrary; if the process is not automatized, I
+         could also forget to commit my changes.
+
+4) Why do you think some version control systems, like Git, allow saving
+   multiple files in one commit, while others, like Google Docs, treat each
+   file separately?
+
+   Since a commit can be considered as a synchronization point of a project,
+   the possibility to save multiple files in a single commit aims to create
+   different project versions which files should be mutually logically
+   consistent.
+   Programming projects almost always consist of many modules, implemented on
+   different files, which should act as a single logical entity.
+   GoogleDocs is intended to manage common "office documents" like spreadsheets
+   or rich text formats, but these files rarely logically depend on others.
+
+5) How can you use the commands git log and git diff to view the history of
+   files?
+
+   'git log' allows the user to list all the commits, together with their
+   explanatory message: it is a straightforward way to look informally at the
+   evolution of a repository, getting high-level understanding.
+   'git diff' is able to track the low-level implementation changes between two
+   versions, listing also the files they were made on.
+   Now imagine this scenario:
+   - a user lists all the versions of a repository (suppose their ordered ID
+     sequence is [r_1, r_2, ... r_T]) using 'git log';
+   - now, iteratively usign 'git diff r_i-1 r_i', 2 <= i <= T, allows to track
+     all the changes between two following repository commits, including
+     changes to a single file.
+   In most of the cases, the number T of commits will be very large, and
+   changes to a file file_x will be very rare; naming file_x_1, file_x_2, ...
+   file_x_T its corresponding versions into the repository, this means that
+   with high probability file_x_i-1 == file_x_i, 2 <= i <= T.
+   'git' can follow the history of just a single file named file_x by using the
+   option 'git log --follow file_x'.
+
+6) How might using version control make you more confident to make changes that
+   could break something?
+
+   Suppose I realize a bug was introduced between two repository versions, say
+   r_i and r_T, i < T, in the sense that version r_T contains a broken
+   executable while r_i is "safe".
+   Using 'git checkout' and a bisection search between these two extremal
+   commits, I can track down the commit that introduced the error in log(T-i)
+   trials and restore to a "safe" version whenever I want.
+   Thus, I can feel more free to explore different programming options.
+
+7) Now that you have your workspace set up, what do you want to try using 'git'
+   for?
+
+
+
