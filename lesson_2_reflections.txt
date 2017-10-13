@@ -21,4 +21,53 @@
    The real value of S is that it allows me to select which changes to remember
    and which ones to discard.
 
+3) How can you use the staging area to make sure you have one commit per
+   logical change?
+
+   For example, supposing a logical change depends on modifications applied
+   just to file file_x but 'git status' indicates a second file file_y is in
+   the staging area along with file_x, I should use 'git reset file_y' to apply
+   this second (and logically independent) modification during another commit.
+
+4) What are some situations when branching would be helpful in keeping your
+   history organized? How would branches help?
+
+   As the course example shows, branches are helpful when I want to keep N
+   different versions of a project, all of which I intend to support
+   independently from the others: for example, easy-mode will be a valid
+   version in the same way as the original version, but will require separate
+   development and mantainance.
+   If I manage to take care of both the versions in a unified way (for example,
+   introducing a parameter which adjusts the difficulty of the game), there
+   will be no need to keep both branches, but I could merge them into a unified
+   project version.
+   Simply put:
+   - branches help managing parallel development and exploration of the code;
+   - merging helps unifying different versions under a common philosophy.
+   HINT: it is helpful to keep the production-quality (i.e. with as few errors
+         as possible) code on the 'master' branch.
+
+5) How do the diagrams help you visualize the branch structure?
+
+   Following the graph bottom-up (i.e., from the initial commit to subsequent
+   ones) allows me to easily identify branch points and critical changes in the
+   project's development.
+   Following the graph top-down (i.e., from the head of the current branch to
+   the first common parent with another branch) highlights commits which are
+   related with the current branch.
+   I can also count the number of branches which are currently developed.
+
+6) What is the result of merging two branches together? Why do we represent it
+   in the diagram the way we do?
+
+   Suppose we have two branches 'a' = [a_1, ... a_Ta] and 'b' = [b_1, ... b_Tb]
+   of a repository, which common ancestor commit c.
+   Merging the two branches is equivalent to commit changes on both a_Ta and
+   b_Tb in a single commit d: this commit summarizes coherently all the changes
+   applied to c both by branch 'a' and 'b'.
+   Small lines in the diagram representation can be interpreted as mathematical
+   mappings from a commit onto another, and commit themselves can be viewed as
+   points of a certain space (whose elements are project states): thus, the
+   graph representation indicates that two different paths into this "dynamical
+   system" converge onto the same point.
 
