@@ -1,8 +1,48 @@
 
-1) When would you want to use a remote repository rather than keeping all your work local?
+1) When would you want to use a remote repository rather than keeping all your
+   work local?
 
-   First of all, remote repositories are common references for everybody working on a specific project,
-   since they represent the "standard resources pool": they allow to collaborate with other programmers.
-   Furthermore, storing a project repository on a remote server is an effective backup, protecting
-   from accidental damages to your own computer and allowing to continue working on a project from other
-   workstations and/or devices.
+   First of all, remote repositories are common references for everybody
+   working on a specific project, since they represent the "standard resources
+   pool": they allow to collaborate with other programmers.
+   Furthermore, storing a project repository on a remote server is an effective
+   backup, protecting from accidental damages to your own computer and allowing
+   to continue working on a project from other workstations and/or devices.
+
+2) Why might you want to always pull changes manually rather than having Git
+   automatically stay up-to-date with your remote repository?
+
+   When working on shared projects, other programmers might be constantly
+   updating the same branch I am working on: if Git automatically pulls the
+   newest version, I would not be working on a stable starting point most of
+   the time.
+   For example, suppose me and a friend of mine would be working on a single
+   'master' branch, and let's call its tip commit master_0. One day, I decide
+   to work on this project and Git automatically pulls master_0; I work on it
+   for a bit and then locally commit to master_1. But my friend is working on
+   it too, and pushes his modifications to the remote repository in a commit
+   called master_2, which becomes the tip of the 'master' branch of the online
+   repository: if Git automatically tried to pull the 'master' branch from the
+   remote, it would end up trying to solve an ambiguity between my local
+   'master' branch (with tip master_1) and the remote one (with tip master_2),
+   resulting in an undesired interference with my current work.
+
+3) Describe the differences between forks, clones, and branches. When would you
+   use one instead of another?
+
+   We should distinguish between forks and clones (which, like 'git init', set
+   up repositories) from branches, which are modifications on the algebraic
+   tree structure of the commits.
+   Branches should be used when I would like to explore variations of a project
+   (e.g. insert a new feature).
+   Since forks and clones create repositories starting from existing ones
+   (differently from 'git init', which instead creates a repository on an
+   existing working tree), they have one repository as the operation source and
+   another as the operation sink. But the question then is "Why should I want
+   a copy of a repository? Would it not suffice just a file copy?"
+   Local repositories are good to develop on my own, while remote repositories
+   should be used when I would like to keep the project public; but if the main
+   contributor of a public repository (as those on GitHub) would like to offer
+   his/her version without changing it (in what we could call "read-only
+   mode"), we should create a public copy of it: i.e., a fork!
+   
