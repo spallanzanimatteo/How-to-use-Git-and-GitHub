@@ -85,5 +85,8 @@
 7) Now that you have your workspace set up, what do you want to try using Git
    for?
 
-
+   As of today (October 13rd, 2017), I want to use Git mainly for two reasons:
+   - track a bibliography and an 'Articoli' directory as a Git repository;
+   - develop deep neural networks as Git repository, in order to test design
+     variations of the same architecture as branches of a same project.
 
