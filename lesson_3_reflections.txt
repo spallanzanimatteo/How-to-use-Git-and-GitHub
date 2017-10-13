@@ -1,0 +1,8 @@
+
+1) When would you want to use a remote repository rather than keeping all your work local?
+
+   First of all, remote repositories are common references for everybody working on a specific project,
+   since they represent the "standard resources pool": they allow to collaborate with other programmers.
+   Furthermore, storing a project repository on a remote server is an effective backup, protecting
+   from accidental damages to your own computer and allowing to continue working on a project from other
+   workstations and/or devices.
