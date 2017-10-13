@@ -68,7 +68,7 @@
    changes to a file file_x will be very rare; naming file_x_1, file_x_2, ...
    file_x_T its corresponding versions into the repository, this means that
    with high probability file_x_i-1 == file_x_i, 2 <= i <= T.
-   'git' can follow the history of just a single file named file_x by using the
+   Git can follow the history of just a single file named file_x by using the
    option 'git log --follow file_x'.
 
 6) How might using version control make you more confident to make changes that
@@ -82,7 +82,7 @@
    trials and restore to a "safe" version whenever I want.
    Thus, I can feel more free to explore different programming options.
 
-7) Now that you have your workspace set up, what do you want to try using 'git'
+7) Now that you have your workspace set up, what do you want to try using Git
    for?
 
 
