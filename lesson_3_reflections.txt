@@ -71,3 +71,17 @@
    the whole project and identify key points (the commit idea is awesome!) from
    where to proceed in an unambiguous way.
 
+6) When would you want to make changes in a separate branch rather than
+   directly in master? What benefits does each approach have?
+
+   Using branches which are not the master branch tend to slow down the
+   approvement of modifications; this process is intended to let every
+   developer who is working on a project know about each other's visions.
+   When collaborating on very large projects, it should be better to make each
+   subteam work on a different branch: it would be more cumbersome to then take
+   every branch up-do-date with the master (since the conflict management
+   process we studied would grow exponentially in the number of branches), but
+   it would also be more easily understandable by the team (as long as the
+   modifications are cleverly and carefully distributed amongst branches by the
+   project manager).
+
