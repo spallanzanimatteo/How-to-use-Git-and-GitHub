@@ -45,4 +45,14 @@
    contributor of a public repository (as those on GitHub) would like to offer
    his/her version without changing it (in what we could call "read-only
    mode"), we should create a public copy of it: i.e., a fork!
-   
+
+4) What is the benefit of having a copy of the last known state of the remote
+   stored locally?
+
+   If I did not have it, then it would be more difficult for Git to synchronize
+   histories of local and public copies of the repository.
+   In fact, if I have an ancestor commit a and I develop to b, while a
+   colleague of mine is working on a branch with tip c and pushes it to GitHub,
+   then Git will only need to track our changes only down to a instead of the
+   initial commit.
+
