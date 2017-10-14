@@ -56,3 +56,18 @@
    then Git will only need to track our changes only down to a instead of the
    initial commit.
 
+5) How would you collaborate without usign Git or GitHub? What would be easier,
+   and what would be harder?
+
+   Collaborating means creating synchronization points during a workflow, with
+   every participant contributing to parallelize development and explore many
+   different options.
+   As every software, Git and GitHub are just proposals towards this goal: they
+   require acquiring expertise in their syntax, and confidence with their data
+   structures. They have a clever structure to track evolution of ideas, but
+   every participant must have spent some time learning how to use them.
+   But without them, it would likely be very hard to plan developments with
+   your team when you are away from office/laboratory, and moreover to track
+   the whole project and identify key points (the commit idea is awesome!) from
+   where to proceed in an unambiguous way.
+
